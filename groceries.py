@@ -1,6 +1,6 @@
 # groceries.py
 
-#from pprint import pprint
+from pprint import pprint
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -40,9 +40,30 @@ for i in sorted_products:
     price_USD = "${0:.2f}".format(i["price"])
     print("+",i["name"], str(price_USD))
    
+departments = []
 
+for p in products: 
+    #print(p["department"])
+    departments.append(p["department"])
 
-#based on solution found on Stack Overflow:https://stackoverflow.com/questions/33661893/typeerror-unhashable-type-dict-dictionaries-within-lists
+unique_departments = list(set(departments))
+
+department_count = len(departments)  
+
+print("------------")
+print("There are", str(department_count), "departments")
+print("----------------")
+
+unique_departments.sort()
+
+for d in unique_departments: 
+    matching_products = [p for p in products if p["department"]==d]
+    matching_products_count = len(matching_products)
+    if matching_products_count > 1:
+        label = "products"
+    else: 
+        label = "product"
+    print(d.title() + " (" + str(matching_products_count) + " " + label + ")")
 
 # pprint(products)
 
