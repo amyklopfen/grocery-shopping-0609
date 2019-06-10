@@ -25,16 +25,20 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
+products_count = 20
 
 print("----------------")
-print("There are 20 products:")
+print("There are " + str(products_count) + " products:")
 print("----------------")
+
 
 for i in products:
-    print("+", i["name"], "($",i["price"],")")
+    price_USD = "${0:.2f}".format(i["price"])
+    print("+"i["name"], str(price_USD))
+   
+
 
 #based on solution found on Stack Overflow:https://stackoverflow.com/questions/33661893/typeerror-unhashable-type-dict-dictionaries-within-lists
-
 
 # pprint(products)
 
