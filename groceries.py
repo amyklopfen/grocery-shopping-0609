@@ -28,11 +28,11 @@ products = [
 products_count = 20
 
 print("----------------")
-print("There are " + str(products_count) + " products:")
+print("There are " + str(products_count) + " products:") #can add f to beginning of string to indicate that you can insert variables
 print("----------------")
 
 def sort_by_name(x):
-    return x ["name"]
+    return x ["name"] #square brackets how you reference any item in dictionary
 
 sorted_products = sorted(products, key=sort_by_name)
 
@@ -48,7 +48,7 @@ for p in products:
 
 unique_departments = list(set(departments))
 
-department_count = len(departments)  
+department_count = len(unique_departments)  
 
 print("------------")
 print("There are", str(department_count), "departments")
